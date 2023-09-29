@@ -1,4 +1,5 @@
 @import 'bootstrap/dist/css/bootstrap.css';
+@import url('https://fonts.googleapis.com/css2?family=Onest:wght@100;300;400;600&display=swap');
 
 html,
 body {
@@ -18,5 +19,12 @@ a {
 }
 
 body {
-  background-color: #88effd;
+  background-color: black;
+}
+h2 {
+  font-family: 'Onest', sans-serif;
+  color: white;
+}
+.container {
+  padding: 140px;
 }
