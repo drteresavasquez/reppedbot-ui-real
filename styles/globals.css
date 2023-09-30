@@ -20,7 +20,7 @@ a {
 }
 h2 {
   font-family: 'Onest', sans-serif;
-  color: white;
+  color: white !important;
 }
 .container {
   padding: 20px;
