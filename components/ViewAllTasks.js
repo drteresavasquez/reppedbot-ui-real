@@ -6,14 +6,22 @@ export default function ViewAllTasks() {
   const [doneUserTasks, setDoneUserTasks] = useState([]);
   const [undoneUserTasks, setUndoneUserTasks] = useState([]);
 
-  useEffect(() => {
+  const setUp = () => {
     getAllTasks().then((tasks) => {
       const done = tasks.filter((t) => t.isDone);
       const undone = tasks.filter((t) => !t.isDone);
       setDoneUserTasks(done);
       setUndoneUserTasks(undone);
     });
-  }, []);
+  };
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setUp();
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, [doneUserTasks, undoneUserTasks]);
   return (
     <>
       <h2>The Repped Hustle List</h2>
