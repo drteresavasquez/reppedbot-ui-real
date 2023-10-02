@@ -9,7 +9,7 @@ export default function ViewAllTasks() {
   const setUp = () => {
     getAllTasks().then((tasks) => {
       const done = tasks.filter((t) => t.isDone);
-      const undone = tasks.filter((t) => !t.isDone);
+      const undone = tasks.filter((t) => !t.isDone).reverse();
       setDoneUserTasks(done);
       setUndoneUserTasks(undone);
     });
